@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @entry.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @entry.last_name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @entry.email %>
+</p>
+
+<p>
+  <strong>Zip code:</strong>
+  <%= @entry.zip_code %>
+</p>
+
+<p>
+  <strong>Favorite color:</strong>
+  <%= @entry.favorite_color %>
+</p>
+
+<%= link_to 'Edit', edit_entry_path(@entry) %> |
+<%= link_to 'Back', entries_path %>

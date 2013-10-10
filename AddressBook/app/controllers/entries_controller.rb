@@ -25,7 +25,9 @@ class EntriesController < ApplicationController
   # POST /entries.json
   def create
     @entry = Entry.new(entry_params)
-
+    @entry.first_name = params[:entry][:first_name].titleize
+    @entry.last_name = params[:entry][:last_name].titleize
+	
     respond_to do |format|
       if @entry.save
         format.html { redirect_to @entry, notice: 'Entry was successfully created.' }

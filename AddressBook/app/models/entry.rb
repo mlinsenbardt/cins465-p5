@@ -16,7 +16,19 @@ validate :check_zip_codes
 	def check_colors
 		if !(Formating.valid_color(self.favorite_color))
 			errors.add :favorite_color, "is not a valid color. The list of valid colors is at http://www.w3schools.com/html/html_colornames.asp"
+		else
+			f = File.open("lib/colors","r")
+			colors = Array.new
+			f.each do |line|
+				colors.push(line)
+			end
+			colors.select! { |string| string.strip!}
+			colors.each { |string| 
+					if string.downcase == self.favorite_color.downcase
+						self.favorite_color = string
+					end}
 		end
+			
 	end
 
 	def check_zip_codes

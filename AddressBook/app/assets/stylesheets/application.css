@@ -11,3 +11,9 @@
  *= require_self
  *= require_tree .
  */
+
+table
+{
+  border-collapse: collapse;
+  border: 50px solid #FF0000;
+}

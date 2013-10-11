@@ -7,7 +7,22 @@ module Formating
 			colors.push(line)
 		end
 		colors.select! { |string| string.strip!}
-		return colors.include? (favorite_color)
+		colors.each { |string| 
+				if string.downcase == favorite_color.downcase
+					return true
+				end}
+					return false
+	end
+	def Formating.final_color favorite_color
+		f = File.open("lib/colors","r")
+		colors = Array.new
+		f.each do |line|
+			colors.push(line)
+		end
+		colors.each { |string| 
+				if string.downcase == favorite_color.downcase
+					return string
+				end}
 	end
 	def Formating.valid_zip_code zip_code
 		f = File.open("lib/zip_codes","r")

@@ -27,7 +27,6 @@ class EntriesController < ApplicationController
     @entry = Entry.new(entry_params)
     @entry.first_name = params[:entry][:first_name].titleize
     @entry.last_name = params[:entry][:last_name].titleize
-	
     respond_to do |format|
       if @entry.save
         format.html { redirect_to @entry, notice: 'Entry was successfully created.' }
@@ -38,7 +37,6 @@ class EntriesController < ApplicationController
       end
     end
   end
-
   # PATCH/PUT /entries/1
   # PATCH/PUT /entries/1.json
   def update

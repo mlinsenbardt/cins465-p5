@@ -11,6 +11,7 @@
       <th></th>
       <th></th>
       <th></th>
+      <th></th>
     </tr>
   </thead>
 
@@ -22,6 +23,7 @@
         <td><%= entry.email %></td>
         <td><%= entry.zip_code %></td>
         <td><%= entry.favorite_color %></td>
+	<td bgcolor="<%= entry.favorite_color %>"></td>
         <td><%= link_to 'Show', entry %></td>
         <td><%= link_to 'Edit', edit_entry_path(entry) %></td>
         <td><%= link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
